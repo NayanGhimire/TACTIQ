@@ -1,0 +1,161 @@
+{
+  "task": "7-class tactical-pattern classification of SYNTHETIC rule-labelled event sequences",
+  "seed": 42,
+  "n_train": 8400,
+  "n_val": 1800,
+  "n_test": 1800,
+  "n_test_matches": 90,
+  "classes": [
+    "controlled_buildup",
+    "direct_progression",
+    "wide_attack",
+    "central_progression",
+    "high_press_turnover",
+    "counterattack",
+    "other_or_uncertain"
+  ],
+  "epochs_run": 26,
+  "best_epoch": 20,
+  "train_accuracy": 0.981904761904762,
+  "val_accuracy": 0.9766666666666667,
+  "test_accuracy": 0.9644444444444444,
+  "test_macro_f1": 0.9658175274587031,
+  "per_class": {
+    "controlled_buildup": {
+      "precision": 0.9746835443037974,
+      "recall": 0.9788135593220338,
+      "f1": 0.9767441860465116,
+      "support": 236
+    },
+    "direct_progression": {
+      "precision": 0.9276595744680851,
+      "recall": 0.990909090909091,
+      "f1": 0.9582417582417583,
+      "support": 220
+    },
+    "wide_attack": {
+      "precision": 0.9596774193548387,
+      "recall": 0.9794238683127572,
+      "f1": 0.9694501018329938,
+      "support": 243
+    },
+    "central_progression": {
+      "precision": 0.9563492063492064,
+      "recall": 0.9717741935483871,
+      "f1": 0.964,
+      "support": 248
+    },
+    "high_press_turnover": {
+      "precision": 0.9963235294117647,
+      "recall": 1.0,
+      "f1": 0.998158379373849,
+      "support": 271
+    },
+    "counterattack": {
+      "precision": 0.9651162790697675,
+      "recall": 0.9920318725099602,
+      "f1": 0.9783889980353635,
+      "support": 251
+    },
+    "other_or_uncertain": {
+      "precision": 0.9664429530201343,
+      "recall": 0.8700906344410876,
+      "f1": 0.9157392686804452,
+      "support": 331
+    }
+  },
+  "confusion_matrix": [
+    [
+      231,
+      0,
+      0,
+      3,
+      0,
+      0,
+      2
+    ],
+    [
+      0,
+      218,
+      0,
+      0,
+      0,
+      0,
+      2
+    ],
+    [
+      0,
+      1,
+      238,
+      0,
+      0,
+      0,
+      4
+    ],
+    [
+      2,
+      4,
+      0,
+      241,
+      0,
+      0,
+      1
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      271,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      1,
+      249,
+      1
+    ],
+    [
+      4,
+      12,
+      10,
+      8,
+      0,
+      9,
+      288
+    ]
+  ],
+  "baselines": {
+    "majority_class": {
+      "accuracy": 0.18388888888888888,
+      "macro_f1": 0.04437889656097071
+    },
+    "logistic_regression_pooled_features": {
+      "accuracy": 0.9561111111111111,
+      "macro_f1": 0.9580371148856822
+    }
+  },
+  "robustness_to_coordinate_noise": {
+    "0.0": {
+      "accuracy": 0.9644444444444444,
+      "macro_f1": 0.9658175274587031
+    },
+    "2.0": {
+      "accuracy": 0.9455555555555556,
+      "macro_f1": 0.9482091368334389
+    },
+    "5.0": {
+      "accuracy": 0.8844444444444445,
+      "macro_f1": 0.8929470990576319
+    }
+  },
+  "caveats": [
+    "Synthetic data; labels are outputs of documented rules, not expert annotation.",
+    "Scores do not demonstrate performance on real match data.",
+    "Teams recur across splits; only matches are held out."
+  ]
+}

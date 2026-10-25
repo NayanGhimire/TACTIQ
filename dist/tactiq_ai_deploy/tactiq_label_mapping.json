@@ -1,0 +1,39 @@
+{
+  "classes": [
+    "controlled_buildup",
+    "direct_progression",
+    "wide_attack",
+    "central_progression",
+    "high_press_turnover",
+    "counterattack",
+    "other_or_uncertain"
+  ],
+  "class_to_id": {
+    "controlled_buildup": 0,
+    "direct_progression": 1,
+    "wide_attack": 2,
+    "central_progression": 3,
+    "high_press_turnover": 4,
+    "counterattack": 5,
+    "other_or_uncertain": 6
+  },
+  "id_to_class": {
+    "0": "controlled_buildup",
+    "1": "direct_progression",
+    "2": "wide_attack",
+    "3": "central_progression",
+    "4": "high_press_turnover",
+    "5": "counterattack",
+    "6": "other_or_uncertain"
+  },
+  "definitions": {
+    "controlled_buildup": "No possession regain in the window; >=5 passes, >=85% completed, mean pass length <=20 m, starts in own half (x<=40), net forward progress >=12 m at <=3.0 m/s, window >=14 s, no cross/cutback and no shot.",
+    "direct_progression": "No regain; mean pass length >=24 m, >=2 long forward passes (>=25 m long and >=18 m forward), net forward progress >=35 m at >=3.0 m/s.",
+    "wide_attack": "No regain; >=60% of ball events end in wide channels (|y-50|>30), net forward progress >=25 m, and >=1 cross or cutback (a backward pass from the wide byline area x>=85 into the centre). (Not direct_progression.)",
+    "central_progression": "No regain; <=30% of ball events end in wide channels, net forward progress >=25 m, no cross, mean pass length <24 m. (Not controlled_buildup / direct_progression.)",
+    "high_press_turnover": "Own possession regained (tackle won / recovery) in the opponent half (x>=55) after >=1 opponent pass and >=2 own pressure events in the 5 events before the regain.",
+    "counterattack": "Own possession regained in own half or midfield (x<55), then >=35 m forward progression at >=3.5 m/s within <=14 s using <=4 passes.",
+    "other_or_uncertain": "Everything that satisfies none of the rules above: sterile/lateral possession, mixed channels, regains without a fast or pressed follow-up, failed long balls, wide play without a cross, ..."
+  },
+  "note": "Labels are outputs of documented numeric rules applied to SYNTHETIC event sequences. They are not expert annotations or objective football truth."
+}
